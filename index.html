@@ -1,0 +1,372 @@
+export default function UtsavPortfolio() {
+  const skills = {
+    Presales: [
+      'Enterprise Client Demos',
+      'POC Delivery',
+      'Solution Architecture',
+      'Requirement Gathering',
+      'RFP / RFI Responses',
+      'Technical Consulting'
+    ],
+    'CCaaS & Dialers': [
+      'Predictive Dialer',
+      'Progressive Dialer',
+      'Blended Calling',
+      'Omnichannel Contact Center',
+      'IVR Solutions',
+      'DialShree'
+    ],
+    Integrations: [
+      'Salesforce CTI',
+      'CRM Integrations',
+      'REST APIs',
+      'WebRTC',
+      'SIP Integrations',
+      'Custom Workflows'
+    ],
+    Telephony: [
+      'VoIP',
+      'IP-PBX',
+      'Asterisk',
+      'SIP Trunking',
+      'Call Routing',
+      'Realtime Monitoring'
+    ]
+  };
+
+  const projects = [
+    {
+      title: 'Enterprise Contact Center Deployment',
+      description:
+        'Designed and demonstrated scalable CCaaS architecture for enterprise clients with omnichannel communication, intelligent routing, and CRM integrations.',
+      impact: 'Improved customer handling workflows and accelerated deployment decisions during POC stages.'
+    },
+    {
+      title: 'Salesforce CTI Integration',
+      description:
+        'Led Salesforce CTI and dialer integration discussions with automation workflows, click-to-call, and agent productivity enhancements.',
+      impact: 'Enabled seamless customer interaction visibility and reduced manual agent operations.'
+    },
+    {
+      title: 'Custom SIP & API Integration',
+      description:
+        'Collaborated with engineering teams to integrate SIP infrastructure and APIs for inbound and outbound communication workflows.',
+      impact: 'Delivered stable communication architecture for client-specific telephony requirements.'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#f5f3ef] text-slate-900">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-[#0f1f33] text-white">
+        <div className="absolute -top-20 -right-10 h-80 w-80 rounded-full bg-yellow-500/10 blur-2xl"></div>
+        <div className="absolute bottom-0 left-1/4 h-60 w-60 rounded-full bg-amber-400/5 blur-2xl"></div>
+
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div className="grid items-center gap-14 lg:grid-cols-2">
+            <div>
+              <div className="mb-5 inline-flex items-center rounded-full border border-yellow-500/30 bg-yellow-500/10 px-4 py-2 text-sm font-medium tracking-wide text-yellow-400">
+                Presales Engineer • CCaaS Specialist
+              </div>
+
+              <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight md:text-6xl">
+                Utsav Kikani
+              </h1>
+
+              <p className="mb-8 max-w-2xl text-lg leading-8 text-slate-300">
+                Results-driven Presales Engineer specializing in Contact Center Solutions,
+                Dialers, VoIP Infrastructure, CRM Integrations, and Enterprise
+                Communication Workflows.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="mailto:utsav.27092002@gmail.com"
+                  className="rounded-2xl bg-yellow-500 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:scale-105"
+                >
+                  Contact Me
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/utsav-kikani-709142273/"
+                  target="_blank"
+                  className="rounded-2xl border border-slate-600 px-6 py-3 text-sm font-semibold text-white transition hover:border-yellow-500 hover:text-yellow-400"
+                >
+                  LinkedIn Profile
+                </a>
+              </div>
+
+              <div className="mt-10 grid gap-4 text-sm text-slate-300 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <p className="text-slate-400">Experience</p>
+                  <h3 className="mt-1 text-2xl font-bold text-white">2+ Years</h3>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <p className="text-slate-400">Location</p>
+                  <h3 className="mt-1 text-2xl font-bold text-white">Ahmedabad, India</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-md">
+                <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-5">
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.3em] text-yellow-400">
+                      Core Expertise
+                    </p>
+                    <h2 className="mt-2 text-3xl font-bold">Technical Focus</h2>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  {Object.entries(skills).map(([category, items]) => (
+                    <div key={category}>
+                      <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
+                        {category}
+                      </h3>
+
+                      <div className="flex flex-wrap gap-2">
+                        {items.map((skill) => (
+                          <span
+                            key={skill}
+                            className="rounded-xl border border-yellow-500/20 bg-yellow-500/10 px-3 py-2 text-sm text-yellow-100"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-700">
+              About Me
+            </p>
+
+            <h2 className="mb-8 text-4xl font-bold text-slate-900">
+              Turning Technical Complexity into Business Value
+            </h2>
+
+            <div className="space-y-6 text-lg leading-8 text-slate-700">
+              <p>
+                I help businesses evaluate and deploy scalable contact center and
+                communication solutions by combining strong technical expertise with
+                consultative presales execution.
+              </p>
+
+              <p>
+                My experience includes conducting enterprise demonstrations,
+                requirement analysis, proof of concept execution, CRM integrations,
+                VoIP architecture consulting, and technical solution design for
+                dialer and CCaaS environments.
+              </p>
+
+              <p>
+                I collaborate closely with sales, engineering, and client teams to
+                ensure solutions are technically aligned, operationally scalable,
+                and commercially impactful.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-amber-700">
+              Quick Info
+            </p>
+
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm text-slate-500">Full Name</p>
+                <h3 className="text-xl font-semibold">Utsav Kikani</h3>
+              </div>
+
+              <div>
+                <p className="text-sm text-slate-500">Email</p>
+                <a
+                  href="mailto:utsav.27092002@gmail.com"
+                  className="text-lg font-medium text-slate-800 hover:text-amber-700"
+                >
+                  utsav.27092002@gmail.com
+                </a>
+              </div>
+
+              <div>
+                <p className="text-sm text-slate-500">Phone</p>
+                <a
+                  href="tel:+918735912707"
+                  className="text-lg font-medium text-slate-800 hover:text-amber-700"
+                >
+                  +91 8735912707
+                </a>
+              </div>
+
+              <div>
+                <p className="text-sm text-slate-500">Education</p>
+                <h3 className="text-lg font-semibold">
+                  B.Sc. in Mathematics
+                </h3>
+                <p className="text-slate-600">
+                  St. Xavier's College, Ahmedabad
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm text-slate-500">Languages</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {['English', 'Hindi', 'Gujarati'].map((lang) => (
+                    <span
+                      key={lang}
+                      className="rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700"
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-700">
+              Experience
+            </p>
+            <h2 className="text-4xl font-bold text-slate-900">
+              Professional Journey
+            </h2>
+          </div>
+
+          <div className="rounded-[32px] border border-slate-200 bg-[#faf8f5] p-10 shadow-sm">
+            <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <h3 className="text-3xl font-bold text-slate-900">
+                  Presales Engineer / IT Solutions Consultant
+                </h3>
+                <p className="mt-2 text-lg text-slate-600">
+                  Elision Technologies Pvt. Ltd. • Ahmedabad, India
+                </p>
+              </div>
+
+              <div className="rounded-full bg-amber-100 px-5 py-2 text-sm font-semibold text-amber-800">
+                2022 – Present
+              </div>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {[
+                'Delivered end-to-end client demonstrations for dialer and contact center solutions across enterprise accounts.',
+                'Conducted requirement gathering and proposed scalable technical solutions aligned with business goals.',
+                'Designed and executed Proof of Concept deployments with strong conversion success.',
+                'Handled Salesforce CTI and CRM integrations with dialer platforms.',
+                'Prepared technical proposals, solution architecture documents, and RFP responses.',
+                'Collaborated with engineering teams on VoIP, SIP, and IP-PBX deployment requirements.'
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="rounded-2xl border border-slate-200 bg-white p-5"
+                >
+                  <div className="flex gap-4">
+                    <div className="mt-1 h-3 w-3 rounded-full bg-amber-500"></div>
+                    <p className="leading-7 text-slate-700">{item}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+        <div className="mb-14">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-700">
+            Highlighted Work
+          </p>
+          <h2 className="text-4xl font-bold text-slate-900">
+            Selected Projects & Contributions
+          </h2>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="group rounded-[28px] border border-slate-200 bg-white p-8 transition hover:-translate-y-2 hover:shadow-xl"
+            >
+              <div className="mb-5 inline-flex rounded-full bg-amber-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-amber-800">
+                Project
+              </div>
+
+              <h3 className="mb-4 text-2xl font-bold text-slate-900">
+                {project.title}
+              </h3>
+
+              <p className="mb-5 leading-7 text-slate-600">
+                {project.description}
+              </p>
+
+              <div className="rounded-2xl bg-slate-50 p-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-500">
+                  Impact
+                </p>
+                <p className="mt-2 leading-7 text-slate-700">
+                  {project.impact}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-[#0f1f33] py-24 text-white">
+        <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-yellow-400">
+            Let’s Connect
+          </p>
+
+          <h2 className="mb-6 text-5xl font-bold leading-tight">
+            Building Smarter Contact Center Experiences
+          </h2>
+
+          <p className="mx-auto mb-10 max-w-2xl text-lg leading-8 text-slate-300">
+            Open to collaborations, enterprise consulting opportunities,
+            presales discussions, and communication solution architecture projects.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="mailto:utsav.27092002@gmail.com"
+              className="rounded-2xl bg-yellow-500 px-8 py-4 text-sm font-semibold text-slate-900 transition hover:scale-105"
+            >
+              Email Me
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/utsav-kikani-709142273/"
+              target="_blank"
+              className="rounded-2xl border border-slate-600 px-8 py-4 text-sm font-semibold text-white transition hover:border-yellow-500 hover:text-yellow-400"
+            >
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
