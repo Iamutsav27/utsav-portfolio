@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Resume of Utsav Kikani, a Presales Engineer and CCaaS specialist with experience in solution consulting, enterprise demos, POCs, and contact center integrations." />
+  <title>Utsav Kikani | Presales Engineer Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0c1a2e;
+      --navy-mid: #112240;
+      --gold: #e8b84b;
+      --gold-border: rgba(232,184,75,0.3);
+      --text: #e8eefb;
+      --muted: #aebbd0;
+      --card-bg: rgba(255,255,255,0.045);
+      --card-border: rgba(255,255,255,0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--text);
+      line-height: 1.55;
+      padding: 2rem 1rem 3rem;
+    }
+    a { color: var(--gold); text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; }
+    a:hover, a:focus-visible { text-decoration-color: currentColor; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+      backdrop-filter: blur(12px);
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; margin-bottom: 0.35rem; }
+    .headline { color: var(--gold); font-weight: 700; margin-bottom: 0.5rem; }
+    .contact-line { color: var(--muted); font-size: 0.92rem; display: flex; flex-wrap: wrap; gap: 0.35rem 0.8rem; }
+    .contact-line a { color: inherit; }
+    .pill {
+      display: inline-block;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(232,184,75,0.12);
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+    section { margin-bottom: 1.4rem; }
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-bottom: 1px solid var(--gold-border);
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
+    }
+    p { color: var(--muted); }
+    strong { color: var(--text); }
+    .role-header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin-bottom: 0.2rem; }
+    .role { font-size: 1.02rem; }
+    .date { color: var(--gold); font-size: 0.86rem; white-space: nowrap; }
+    .company { color: var(--muted); font-size: 0.92rem; margin-bottom: 0.55rem; }
+    ul { padding-left: 1.15rem; color: var(--muted); }
+    li { margin-bottom: 0.3rem; padding-left: 0.15rem; }
+    li::marker { color: var(--gold); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+    .skill-row { margin-bottom: 0.45rem; color: var(--muted); }
+    .skill-row strong { display: inline; }
+    .project { margin-bottom: 0.65rem; }
+    .project:last-child { margin-bottom: 0; }
+    .project p { font-size: 0.92rem; margin-top: 0.12rem; }
+    .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--card-border); }
+    .btn {
+      appearance: none;
+      display: inline-block;
+      padding: 0.72rem 1.1rem;
+      border-radius: 10px;
+      border: 1px solid var(--gold-border);
+      background: var(--gold);
+      color: var(--navy);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn.secondary { background: transparent; color: var(--text); }
+    .note { color: var(--muted); font-size: 0.78rem; align-self: center; }
+    @media (max-width: 700px) {
+      body { padding: 0.75rem; }
+      .page { padding: 1.25rem; border-radius: 16px; }
+      .top { flex-direction: column; }
+      .grid { grid-template-columns: 1fr; gap: 0; }
+      .role-header { flex-direction: column; gap: 0.1rem; }
+    }
+    @media print {
+      @page { size: A4; margin: 11mm 13mm; }
+      body { background: #fff; color: #111827; padding: 0; font-size: 9.5pt; line-height: 1.35; }
+      .page { max-width: none; padding: 0; border: 0; border-radius: 0; box-shadow: none; background: #fff; backdrop-filter: none; }
+      .top { padding-bottom: 8pt; margin-bottom: 8pt; border-color: #cbd5e1; }
+      h1 { color: #0c1a2e; font-size: 22pt; }
+      h2 { color: #0c1a2e; border-color: #c89a2f; font-size: 9.5pt; margin-bottom: 5pt; padding-bottom: 2pt; }
+      p, ul, .company, .contact-line, .skill-row { color: #334155; }
+      strong { color: #111827; }
+      a { color: #111827; text-decoration: none; }
+      .headline, .date { color: #8a6518; }
+      .pill { color: #6b4d0d; background: #fff8e5; border-color: #d6ad4d; }
+      section { margin-bottom: 8pt; break-inside: avoid; }
+      li { margin-bottom: 2pt; }
+      .project { margin-bottom: 4pt; }
+      .actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="top">
+      <div>
+        <h1>Utsav Kikani</h1>
+        <div class="headline">Presales Engineer · CCaaS &amp; Contact Center Solutions</div>
+        <div class="contact-line">
+          <span>Ahmedabad, Gujarat, India</span>
+          <a href="tel:+918735912707">+91 87359 12707</a>
+          <a href="mailto:utsav.27092002@gmail.com">utsav.27092002@gmail.com</a>
+          <a href="https://www.linkedin.com/in/utsav-kikani-709142273/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div class="pill">Open to Presales Opportunities</div>
+    </header>
+
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Professional Summary</h2>
+      <p>Presales Engineer and IT Solutions Consultant with 2+ years of experience translating enterprise requirements into scalable CCaaS, dialer, IVR, and CRM-integrated solutions. Delivered 1,000+ product demonstrations across BFSI, healthcare, e-commerce, and other sectors, with an approximately 50% POC-to-deal conversion rate. Experienced across discovery, solution architecture, technical proposals, RFP/RFI responses, proof-of-concept delivery, and stakeholder collaboration.</p>
+    </section>
+
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Professional Experience</h2>
+      <div class="role-header">
+        <strong class="role">Presales Engineer / IT Solutions Consultant</strong>
+        <span class="date">2022 – Present</span>
+      </div>
+      <div class="company">Elision Technologies Pvt. Ltd. · Ahmedabad, India</div>
+      <ul>
+        <li>Delivered <strong>1,000+ enterprise product demonstrations</strong> for dialer and CCaaS platforms across BFSI, healthcare, e-commerce, and other sectors.</li>
+        <li>Achieved an approximately <strong>50% POC-to-deal conversion rate</strong> through consultative discovery, tailored solution design, and effective proof-of-concept delivery.</li>
+        <li>Led presales design for <strong>Salesforce CTI and CRM integrations</strong>, including click-to-call, inbound screen pop, automated call logging, and workflow automation.</li>
+        <li>Prepared technical proposals, solution architecture documents, and end-to-end <strong>RFP/RFI responses</strong> for enterprise opportunities.</li>
+        <li>Collaborated with engineering teams on <strong>VoIP, SIP, WebRTC, Asterisk, and IP-PBX</strong> requirements for client-specific telephony environments.</li>
+        <li>Connected sales, engineering, and client stakeholders to deliver solutions that were technically sound, operationally scalable, and commercially viable.</li>
+      </ul>
+    </section>
+
+    <div class="grid">
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Core Skills</h2>
+        <div class="skill-row"><strong>Presales:</strong> Solution Consulting, Discovery, Enterprise Demos, POC Delivery, Solution Architecture, RFP/RFI Responses</div>
+        <div class="skill-row"><strong>Contact Center:</strong> CCaaS, Predictive &amp; Progressive Dialers, Omnichannel, IVR, Blended Calling, DialShree</div>
+        <div class="skill-row"><strong>Integrations:</strong> Salesforce CTI, CRM Integration, REST APIs, WebRTC</div>
+        <div class="skill-row"><strong>Telephony:</strong> SIP, VoIP, Asterisk, IP-PBX</div>
+      </section>
+
+      <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Education &amp; Languages</h2>
+        <p><strong>B.Sc. Mathematics</strong><br />St. Xavier's College, Ahmedabad</p>
+        <p style="margin-top:0.7rem"><strong>Languages:</strong> English, Hindi, Gujarati</p>
+      </section>
+    </div>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Selected Projects</h2>
+      <div class="project">
+        <strong>BFSI Contact Center Modernization</strong>
+        <p>Designed and demonstrated omnichannel CCaaS architectures covering intelligent routing, IVR self-service, predictive campaigns, and real-time supervisor dashboards.</p>
+      </div>
+      <div class="project">
+        <strong>Salesforce CTI &amp; Dialer Integration</strong>
+        <p>Led presales for click-to-call, screen pop, automated call logging, and disposition-based workflows for e-commerce and retail clients.</p>
+      </div>
+      <div class="project">
+        <strong>Healthcare IVR &amp; Appointment Automation</strong>
+        <p>Architected IVR and outbound reminder workflows for appointment confirmations, prescription reminders, and patient feedback through voice and SMS.</p>
+      </div>
+    </section>
+
+    <div class="actions" aria-label="Resume actions">
+      <button class="btn" type="button" onclick="window.print()">Download / Save PDF</button>
+      <a class="btn secondary" href="index.html">Back to Portfolio</a>
+      <a class="btn secondary" href="mailto:utsav.27092002@gmail.com">Email Me</a>
+      <span class="note">Choose “Save as PDF” in the print dialog.</span>
+    </div>
+  </main>
+</body>
+</html>
