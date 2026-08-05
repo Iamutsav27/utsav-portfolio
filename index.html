@@ -71,6 +71,27 @@
     background: radial-gradient(ellipse 60% 50% at 70% 40%, rgba(232,184,75,0.06) 0%, transparent 70%),
                 radial-gradient(ellipse 40% 60% at 10% 80%, rgba(29,53,87,0.6) 0%, transparent 70%);
   }
+  .hero-bg::before,
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    filter: blur(10px);
+    will-change: transform;
+    pointer-events: none;
+  }
+  .hero-bg::before {
+    top: 8%; right: 5%;
+    background: radial-gradient(circle, rgba(232,184,75,0.1), transparent 68%);
+    animation: floatOrbOne 12s ease-in-out infinite alternate;
+  }
+  .hero-bg::after {
+    bottom: -12%; left: -8%;
+    background: radial-gradient(circle, rgba(76,125,184,0.13), transparent 68%);
+    animation: floatOrbTwo 15s ease-in-out infinite alternate;
+  }
   .hero-grid {
     position: absolute; inset: 0; z-index: 0; opacity: 0.03;
     background-image: linear-gradient(var(--gold) 1px, transparent 1px),
@@ -256,6 +277,56 @@
   /* ── ANIMATIONS ── */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes floatOrbOne {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(-45px, 30px, 0) scale(1.08); }
+  }
+  @keyframes floatOrbTwo {
+    from { transform: translate3d(0, 0, 0) scale(0.95); }
+    to { transform: translate3d(60px, -35px, 0) scale(1.1); }
+  }
+
+  /* ── PERFORMANCE MOTION ── */
+  .motion-ready .reveal {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+    transition: opacity 650ms cubic-bezier(.2,.65,.3,1),
+                transform 650ms cubic-bezier(.2,.65,.3,1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: transform, opacity;
+  }
+  .motion-ready .reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  .motion-ready .reveal.is-visible.done { will-change: auto; }
+  .exp-item, .project-card, .info-card, .stat, .metric-item, .chip {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  .exp-item, .project-card, .info-card {
+    transition: transform 250ms cubic-bezier(.2,.65,.3,1), border-color 250ms ease, box-shadow 250ms ease;
+  }
+  .exp-item:hover, .info-card:hover {
+    transform: translate3d(0, -3px, 0);
+    border-color: var(--gold-border);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.14);
+  }
+  .project-card:hover {
+    transform: translate3d(0, -6px, 0);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .motion-ready .reveal { opacity: 1; transform: none; }
+  }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -517,6 +588,58 @@
       const opened = nav.classList.toggle('nav-open');
       toggle.setAttribute('aria-expanded', String(opened));
     });
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealGroups = [
+    '.metric-item', '.exp-card', '.exp-item', '.section-label', '.section-title',
+    '.project-card', '.about-text p', '.info-card', '.cta-inner > *'
+  ];
+  const revealItems = document.querySelectorAll(revealGroups.join(','));
+
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    document.body.classList.add('motion-ready');
+    revealItems.forEach((item, index) => {
+      item.classList.add('reveal');
+      item.style.setProperty('--reveal-delay', `${(index % 4) * 70}ms`);
+    });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        window.setTimeout(() => entry.target.classList.add('done'), 750);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px' });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+
+    const countItems = document.querySelectorAll('.metric-num');
+    const countObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const element = entry.target;
+        const original = element.textContent.trim();
+        const target = Number(original.replace(/[^0-9.]/g, ''));
+        const prefix = original.startsWith('~') ? '~' : '';
+        const suffix = original.endsWith('+') ? '+' : original.endsWith('%') ? '%' : '';
+        const startedAt = performance.now();
+        const duration = 1100;
+
+        const updateCount = now => {
+          const progress = Math.min((now - startedAt) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          element.textContent = `${prefix}${Math.round(target * eased)}${suffix}`;
+          if (progress < 1) requestAnimationFrame(updateCount);
+        };
+
+        requestAnimationFrame(updateCount);
+        observer.unobserve(element);
+      });
+    }, { threshold: 0.7 });
+
+    countItems.forEach(item => countObserver.observe(item));
   }
 </script>
 
