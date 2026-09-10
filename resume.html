@@ -1,217 +1,650 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Resume of Utsav Kikani, a Presales Engineer and CCaaS specialist with experience in solution consulting, enterprise demos, POCs, and contact center integrations." />
-  <title>Utsav Kikani | Presales Engineer Resume</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --navy: #0c1a2e;
-      --navy-mid: #112240;
-      --gold: #e8b84b;
-      --gold-border: rgba(232,184,75,0.3);
-      --text: #e8eefb;
-      --muted: #aebbd0;
-      --card-bg: rgba(255,255,255,0.045);
-      --card-border: rgba(255,255,255,0.1);
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Utsav Kikani is a presales engineer specializing in CCaaS, dialers, IVR, and enterprise integrations for contact center transformation." />
+<meta name="theme-color" content="#0c1a2e" />
+<meta property="og:title" content="Utsav Kikani — Presales Engineer" />
+<meta property="og:description" content="Turning complex contact center technology into clear business value across enterprise demos and solution design." />
+<meta property="og:type" content="website" />
+<title>Utsav Kikani — Presales Engineer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230c1a2e'/%3E%3Cpath d='M16 20h20a8 8 0 0 1 0 16H28v8H16z' fill='%23e8b84b'/%3E%3C/svg%3E" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0c1a2e;
+    --navy-mid: #112240;
+    --navy-light: #1d3557;
+    --gold: #e8b84b;
+    --gold-light: #f5d485;
+    --gold-pale: rgba(232,184,75,0.12);
+    --gold-border: rgba(232,184,75,0.25);
+    --white: #f8f5ef;
+    --muted: #8899aa;
+    --text: #ccd6f6;
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(12,26,46,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.05em; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--muted); font-size: 0.85rem; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+  .nav-toggle { display: none; align-items: center; justify-content: center; flex-direction: column; gap: 4px; background: transparent; border: 0; cursor: pointer; padding: 0.25rem; }
+  .nav-toggle span { width: 22px; height: 2px; background: var(--gold); border-radius: 999px; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .profile-pill { display: inline-flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; padding: 0.6rem 0.9rem; border: 1px solid var(--gold-border); background: rgba(255,255,255,0.04); border-radius: 999px; width: fit-content; }
+  .profile-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #c68f2c); color: var(--navy); display: grid; place-items: center; font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: 0.08em; }
+  .profile-pill strong { display: block; font-size: 0.88rem; color: var(--text); }
+  .profile-pill span { display: block; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.16em; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 7rem 3rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 60% 50% at 70% 40%, rgba(232,184,75,0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(29,53,87,0.6) 0%, transparent 70%);
+  }
+  .hero-bg::before,
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    filter: blur(10px);
+    will-change: transform;
+    pointer-events: none;
+  }
+  .hero-bg::before {
+    top: 8%; right: 5%;
+    background: radial-gradient(circle, rgba(232,184,75,0.1), transparent 68%);
+    animation: floatOrbOne 12s ease-in-out infinite alternate;
+  }
+  .hero-bg::after {
+    bottom: -12%; left: -8%;
+    background: radial-gradient(circle, rgba(76,125,184,0.13), transparent 68%);
+    animation: floatOrbTwo 15s ease-in-out infinite alternate;
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0; opacity: 0.03;
+    background-image: linear-gradient(var(--gold) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold-pale); border: 1px solid var(--gold-border);
+    padding: 6px 16px; border-radius: 999px;
+    font-size: 0.78rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 800; line-height: 1.05;
+    color: #e2eaf8;
+    margin-bottom: 1.25rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  h1 span { color: var(--gold); }
+
+  .hero-desc {
+    font-size: 1.05rem; color: var(--muted); line-height: 1.8;
+    max-width: 500px; margin-bottom: 2rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 1.8rem; border-radius: 10px;
+    font-size: 0.88rem; font-weight: 600; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.03em;
+    cursor: pointer; border: none;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,184,75,0.3); }
+  .btn-secondary {
+    border: 1px solid var(--card-border); color: var(--text);
+    padding: 0.85rem 1.8rem; border-radius: 10px;
+    font-size: 0.88rem; font-weight: 400; text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: pointer; background: transparent;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--card-border); border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--card-border);
+    margin-top: 2.5rem;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .stat {
+    background: var(--card-bg); padding: 1.2rem 1rem; text-align: center;
+    backdrop-filter: blur(8px);
+  }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+  .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 2px; letter-spacing: 0.05em; }
+
+  /* skills card */
+  .skills-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 24px; padding: 2rem;
+    backdrop-filter: blur(12px);
+    animation: fadeIn 0.8s 0.3s ease both;
+  }
+  .skills-card-header { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--card-border); }
+  .skills-card-header p { font-size: 0.72rem; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.3rem; }
+  .skills-card-header h2 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; color: #e2eaf8; }
+  .skill-group { margin-bottom: 1.2rem; }
+  .skill-group-label { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .skill-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    background: var(--gold-pale); border: 1px solid var(--gold-border);
+    color: var(--gold-light); padding: 5px 12px; border-radius: 8px;
+    font-size: 0.78rem;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 3rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .section-label { font-size: 0.72rem; color: var(--gold); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: #e2eaf8; margin-bottom: 3rem; }
+
+  /* ── METRICS BAND ── */
+  .metrics-band {
+    background: var(--navy-mid); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);
+    padding: 3rem;
+  }
+  .metrics-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .metric-item { text-align: center; padding: 1.5rem; }
+  .metric-num { font-family: 'Syne', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--gold); line-height: 1; }
+  .metric-desc { font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.5; }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--navy-mid); }
+  .exp-card {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--card-border);
+    border-radius: 20px; padding: 2.5rem;
+  }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); }
+  .exp-role { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; color: #e2eaf8; }
+  .exp-company { color: var(--muted); font-size: 0.95rem; margin-top: 0.3rem; }
+  .exp-tenure { background: var(--gold-pale); border: 1px solid var(--gold-border); color: var(--gold); padding: 6px 16px; border-radius: 999px; font-size: 0.8rem; white-space: nowrap; }
+  .exp-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .exp-item {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 1rem 1.25rem;
+    display: flex; gap: 0.75rem; align-items: flex-start;
+  }
+  .exp-dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+  .exp-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+  .exp-item strong { color: var(--text); font-weight: 500; }
+
+  /* ── PROJECTS ── */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+  .project-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 20px; padding: 2rem;
+    transition: transform 0.25s, border-color 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .project-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0; transition: opacity 0.25s;
+  }
+  .project-card:hover { transform: translateY(-4px); border-color: var(--gold-border); }
+  .project-card:hover::before { opacity: 1; }
+  .project-tag { display: inline-block; background: var(--gold-pale); border: 1px solid var(--gold-border); color: var(--gold); padding: 4px 12px; border-radius: 999px; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+  .project-title { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; color: #e2eaf8; margin-bottom: 0.75rem; }
+  .project-industry { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .industry-tag { background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: var(--muted); padding: 3px 10px; border-radius: 6px; font-size: 0.72rem; }
+  .project-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
+  .project-impact { background: rgba(232,184,75,0.05); border: 1px solid var(--gold-border); border-radius: 12px; padding: 1rem; }
+  .impact-label { font-size: 0.68rem; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .project-impact p { font-size: 0.85rem; color: var(--text); line-height: 1.6; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--navy-mid); }
+  .about-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 4rem; align-items: start; }
+  .about-text p { font-size: 1rem; color: var(--muted); line-height: 1.9; font-weight: 300; margin-bottom: 1.25rem; }
+  .about-text p span { color: var(--text); font-weight: 400; }
+  .info-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 1.75rem; }
+  .info-row { padding: 0.9rem 0; border-bottom: 1px solid var(--card-border); }
+  .info-row:last-child { border-bottom: none; }
+  .info-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
+  .info-value { font-size: 0.95rem; color: var(--text); }
+  .info-value a { color: var(--text); text-decoration: none; }
+  .info-value a:hover { color: var(--gold); }
+  .lang-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 0.4rem; }
+  .lang-chip { background: rgba(255,255,255,0.06); border: 1px solid var(--card-border); color: var(--muted); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; }
+
+  /* ── CTA ── */
+  #contact {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  #contact::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(232,184,75,0.08) 0%, transparent 70%);
+  }
+  .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .cta-inner .section-title { margin-bottom: 1rem; }
+  .cta-inner p { color: var(--muted); font-size: 1rem; line-height: 1.8; font-weight: 300; margin-bottom: 2.5rem; }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--navy); border-top: 1px solid var(--card-border); padding: 1.5rem 3rem; text-align: center; }
+  footer p { font-size: 0.8rem; color: var(--muted); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes floatOrbOne {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(-45px, 30px, 0) scale(1.08); }
+  }
+  @keyframes floatOrbTwo {
+    from { transform: translate3d(0, 0, 0) scale(0.95); }
+    to { transform: translate3d(60px, -35px, 0) scale(1.1); }
+  }
+
+  /* ── PERFORMANCE MOTION ── */
+  .motion-ready .reveal {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+    transition: opacity 650ms cubic-bezier(.2,.65,.3,1),
+                transform 650ms cubic-bezier(.2,.65,.3,1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: transform, opacity;
+  }
+  .motion-ready .reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  .motion-ready .reveal.is-visible.done { will-change: auto; }
+  .exp-item, .project-card, .info-card, .stat, .metric-item, .chip {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  .exp-item, .project-card, .info-card {
+    transition: transform 250ms cubic-bezier(.2,.65,.3,1), border-color 250ms ease, box-shadow 250ms ease;
+  }
+  .exp-item:hover, .info-card:hover {
+    transform: translate3d(0, -3px, 0);
+    border-color: var(--gold-border);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.14);
+  }
+  .project-card:hover {
+    transform: translate3d(0, -6px, 0);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      color: var(--text);
-      line-height: 1.55;
-      padding: 2rem 1rem 3rem;
+    .motion-ready .reveal { opacity: 1; transform: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-toggle { display: inline-flex; }
+    .nav-links {
+      position: absolute; top: calc(100% + 0.6rem); left: 1.5rem; right: 1.5rem;
+      display: flex; flex-direction: column; gap: 0.9rem; padding: 1rem;
+      border: 1px solid var(--card-border); background: rgba(12,26,46,0.96);
+      border-radius: 16px; opacity: 0; pointer-events: none; transform: translateY(-8px); transition: all 0.2s ease;
     }
-    a { color: var(--gold); text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; }
-    a:hover, a:focus-visible { text-decoration-color: currentColor; }
-    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
-    .page {
-      max-width: 960px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 2.5rem;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.2);
-      backdrop-filter: blur(12px);
-    }
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1.5rem;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; margin-bottom: 0.35rem; }
-    .headline { color: var(--gold); font-weight: 700; margin-bottom: 0.5rem; }
-    .contact-line { color: var(--muted); font-size: 0.92rem; display: flex; flex-wrap: wrap; gap: 0.35rem 0.8rem; }
-    .contact-line a { color: inherit; }
-    .pill {
-      display: inline-block;
-      padding: 0.5rem 0.9rem;
-      border-radius: 999px;
-      background: rgba(232,184,75,0.12);
-      border: 1px solid var(--gold-border);
-      color: var(--gold);
-      font-size: 0.76rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-    }
-    section { margin-bottom: 1.4rem; }
-    h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1rem;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border-bottom: 1px solid var(--gold-border);
-      padding-bottom: 0.35rem;
-      margin-bottom: 0.75rem;
-    }
-    p { color: var(--muted); }
-    strong { color: var(--text); }
-    .role-header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin-bottom: 0.2rem; }
-    .role { font-size: 1.02rem; }
-    .date { color: var(--gold); font-size: 0.86rem; white-space: nowrap; }
-    .company { color: var(--muted); font-size: 0.92rem; margin-bottom: 0.55rem; }
-    ul { padding-left: 1.15rem; color: var(--muted); }
-    li { margin-bottom: 0.3rem; padding-left: 0.15rem; }
-    li::marker { color: var(--gold); }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
-    .skill-row { margin-bottom: 0.45rem; color: var(--muted); }
-    .skill-row strong { display: inline; }
-    .project { margin-bottom: 0.65rem; }
-    .project:last-child { margin-bottom: 0; }
-    .project p { font-size: 0.92rem; margin-top: 0.12rem; }
-    .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--card-border); }
-    .btn {
-      appearance: none;
-      display: inline-block;
-      padding: 0.72rem 1.1rem;
-      border-radius: 10px;
-      border: 1px solid var(--gold-border);
-      background: var(--gold);
-      color: var(--navy);
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn:hover { text-decoration: none; transform: translateY(-1px); }
-    .btn.secondary { background: transparent; color: var(--text); }
-    .note { color: var(--muted); font-size: 0.78rem; align-self: center; }
-    @media (max-width: 700px) {
-      body { padding: 0.75rem; }
-      .page { padding: 1.25rem; border-radius: 16px; }
-      .top { flex-direction: column; }
-      .grid { grid-template-columns: 1fr; gap: 0; }
-      .role-header { flex-direction: column; gap: 0.1rem; }
-    }
-    @media print {
-      @page { size: A4; margin: 11mm 13mm; }
-      body { background: #fff; color: #111827; padding: 0; font-size: 9.5pt; line-height: 1.35; }
-      .page { max-width: none; padding: 0; border: 0; border-radius: 0; box-shadow: none; background: #fff; backdrop-filter: none; }
-      .top { padding-bottom: 8pt; margin-bottom: 8pt; border-color: #cbd5e1; }
-      h1 { color: #0c1a2e; font-size: 22pt; }
-      h2 { color: #0c1a2e; border-color: #c89a2f; font-size: 9.5pt; margin-bottom: 5pt; padding-bottom: 2pt; }
-      p, ul, .company, .contact-line, .skill-row { color: #334155; }
-      strong { color: #111827; }
-      a { color: #111827; text-decoration: none; }
-      .headline, .date { color: #8a6518; }
-      .pill { color: #6b4d0d; background: #fff8e5; border-color: #d6ad4d; }
-      section { margin-bottom: 8pt; break-inside: avoid; }
-      li { margin-bottom: 2pt; }
-      .project { margin-bottom: 4pt; }
-      .actions { display: none; }
-    }
-  </style>
+    nav.nav-open .nav-links { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .skills-card { margin-top: 1.5rem; }
+    .metrics-inner { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .metrics-band { padding: 2rem 1.5rem; }
+  }
+</style>
 </head>
 <body>
-  <main class="page">
-    <header class="top">
-      <div>
-        <h1>Utsav Kikani</h1>
-        <div class="headline">Presales Engineer · CCaaS &amp; Contact Center Solutions</div>
-        <div class="contact-line">
-          <span>Ahmedabad, Gujarat, India</span>
-          <a href="tel:+918735912707">+91 87359 12707</a>
-          <a href="mailto:utsavsayshello@gmail.com">utsavsayshello@gmail.com</a>
-          <a href="https://www.linkedin.com/in/utsav-kikani-709142273/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+<nav>
+  <a class="nav-logo" href="#home">UK.</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="profile-pill">
+        <div class="profile-avatar">UK</div>
+        <div>
+          <strong>Utsav Kikani</strong>
+          <span>Presales Engineer · Ahmedabad</span>
         </div>
       </div>
-      <div class="pill">Open to Presales Opportunities</div>
-    </header>
-
-    <section aria-labelledby="summary-heading">
-      <h2 id="summary-heading">Professional Summary</h2>
-      <p>Presales Engineer and IT Solutions Consultant with 2+ years of experience translating enterprise requirements into scalable CCaaS, dialer, IVR, and CRM-integrated solutions. Delivered 1,000+ product demonstrations across BFSI, healthcare, e-commerce, and other sectors, with an approximately 50% POC-to-deal conversion rate. Experienced across discovery, solution architecture, technical proposals, RFP/RFI responses, proof-of-concept delivery, and stakeholder collaboration.</p>
-    </section>
-
-    <section aria-labelledby="experience-heading">
-      <h2 id="experience-heading">Professional Experience</h2>
-      <div class="role-header">
-        <strong class="role">Presales Engineer / IT Solutions Consultant</strong>
-        <span class="date">2022 – Present</span>
+      <div class="hero-eyebrow">Presales Engineer · CCaaS Specialist</div>
+      <h1>Utsav <span>Kikani</span></h1>
+      <p class="hero-desc">Enterprise presales leader turning complex contact center technology into closed deals — 1,000+ demos, 50% POC-to-deal conversion, across BFSI, Healthcare, and E-commerce.</p>
+      <div class="hero-cta">
+        <a href="resume.html" class="btn-primary">Download Resume ↓</a>
+        <a href="mailto:utsavsayshello@gmail.com" class="btn-secondary">Get in Touch</a>
+        <a href="https://www.linkedin.com/in/utsav-kikani-709142273/" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn ↗</a>
       </div>
-      <div class="company">Elision Technologies Pvt. Ltd. · Ahmedabad, India</div>
-      <ul>
-        <li>Delivered <strong>1,000+ enterprise product demonstrations</strong> for dialer and CCaaS platforms across BFSI, healthcare, e-commerce, and other sectors.</li>
-        <li>Achieved an approximately <strong>50% POC-to-deal conversion rate</strong> through consultative discovery, tailored solution design, and effective proof-of-concept delivery.</li>
-        <li>Led presales design for <strong>Salesforce CTI and CRM integrations</strong>, including click-to-call, inbound screen pop, automated call logging, and workflow automation.</li>
-        <li>Prepared technical proposals, solution architecture documents, and end-to-end <strong>RFP/RFI responses</strong> for enterprise opportunities.</li>
-        <li>Collaborated with engineering teams on <strong>VoIP, SIP, WebRTC, Asterisk, and IP-PBX</strong> requirements for client-specific telephony environments.</li>
-        <li>Connected sales, engineering, and client stakeholders to deliver solutions that were technically sound, operationally scalable, and commercially viable.</li>
-      </ul>
-    </section>
-
-    <div class="grid">
-      <section aria-labelledby="skills-heading">
-        <h2 id="skills-heading">Core Skills</h2>
-        <div class="skill-row"><strong>Presales:</strong> Solution Consulting, Discovery, Enterprise Demos, POC Delivery, Solution Architecture, RFP/RFI Responses</div>
-        <div class="skill-row"><strong>Contact Center:</strong> CCaaS, Predictive &amp; Progressive Dialers, Omnichannel, IVR, Blended Calling, DialShree</div>
-        <div class="skill-row"><strong>Integrations:</strong> Salesforce CTI, CRM Integration, REST APIs, WebRTC</div>
-        <div class="skill-row"><strong>Telephony:</strong> SIP, VoIP, Asterisk, IP-PBX</div>
-      </section>
-
-      <section aria-labelledby="education-heading">
-        <h2 id="education-heading">Education &amp; Languages</h2>
-        <p><strong>B.Sc. Mathematics</strong><br />St. Xavier's College, Ahmedabad</p>
-        <p style="margin-top:0.7rem"><strong>Languages:</strong> English, Hindi, Gujarati</p>
-      </section>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Enterprise Demos</div></div>
+        <div class="stat"><div class="stat-num">~50%</div><div class="stat-label">POC Conversion</div></div>
+        <div class="stat"><div class="stat-num">2+</div><div class="stat-label">Years Experience</div></div>
+      </div>
     </div>
-
-    <section aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Selected Projects</h2>
-      <div class="project">
-        <strong>BFSI Contact Center Modernization</strong>
-        <p>Designed and demonstrated omnichannel CCaaS architectures covering intelligent routing, IVR self-service, predictive campaigns, and real-time supervisor dashboards.</p>
+    <div class="skills-card">
+      <div class="skills-card-header">
+        <p>Core Expertise</p>
+        <h2>Technical Skills</h2>
       </div>
-      <div class="project">
-        <strong>Salesforce CTI &amp; Dialer Integration</strong>
-        <p>Led presales for click-to-call, screen pop, automated call logging, and disposition-based workflows for e-commerce and retail clients.</p>
+      <div class="skill-group">
+        <div class="skill-group-label">Presales</div>
+        <div class="skill-chips">
+          <span class="chip">Enterprise Demos</span><span class="chip">POC Delivery</span><span class="chip">Solution Architecture</span><span class="chip">RFP / RFI Responses</span><span class="chip">Technical Consulting</span>
+        </div>
       </div>
-      <div class="project">
-        <strong>Healthcare IVR &amp; Appointment Automation</strong>
-        <p>Architected IVR and outbound reminder workflows for appointment confirmations, prescription reminders, and patient feedback through voice and SMS.</p>
+      <div class="skill-group">
+        <div class="skill-group-label">CCaaS &amp; Dialers</div>
+        <div class="skill-chips">
+          <span class="chip">Predictive Dialer</span><span class="chip">Omnichannel CCaaS</span><span class="chip">IVR Solutions</span><span class="chip">DialShree</span><span class="chip">Blended Calling</span>
+        </div>
       </div>
-    </section>
-
-    <div class="actions" aria-label="Resume actions">
-      <button class="btn" type="button" onclick="window.print()">Download / Save PDF</button>
-      <a class="btn secondary" href="index.html">Back to Portfolio</a>
-      <a class="btn secondary" href="mailto:utsavsayshello@gmail.com">Email Me</a>
-      <span class="note">Choose “Save as PDF” in the print dialog.</span>
+      <div class="skill-group">
+        <div class="skill-group-label">Integrations &amp; Telephony</div>
+        <div class="skill-chips">
+          <span class="chip">Salesforce CTI</span><span class="chip">REST APIs</span><span class="chip">WebRTC</span><span class="chip">SIP</span><span class="chip">Asterisk</span><span class="chip">VoIP</span>
+        </div>
+      </div>
     </div>
-  </main>
+  </div>
+</section>
+
+<!-- METRICS BAND - DIFFERENT METRICS -->
+<div class="metrics-band">
+  <div class="metrics-inner">
+    <div class="metric-item">
+      <div class="metric-num">100+</div>
+      <div class="metric-desc">POCs converted to production deployment</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">4+</div>
+      <div class="metric-desc">Industries served: BFSI, Healthcare, E-commerce, Retail</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">50+</div>
+      <div class="metric-desc">RFP/RFI responses and technical proposals</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">90%</div>
+      <div class="metric-desc">Client satisfaction on solution implementation</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Experience</div>
+    <div class="section-title">Professional Journey</div>
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Presales Engineer / IT Solutions Consultant</div>
+          <div class="exp-company">Elision Technologies Pvt. Ltd. · Ahmedabad, India</div>
+        </div>
+        <div class="exp-tenure">2022 – Present</div>
+      </div>
+      <div class="exp-items">
+        <div class="exp-item"><div class="exp-dot"></div><p><strong>Led 1,000+ enterprise demos</strong> for dialer and CCaaS solutions, converting ~100+ POCs to production deployments across BFSI, Healthcare, E-commerce, and mixed-industry accounts.</p></div>
+        <div class="exp-item"><div class="exp-dot"></div><p>Achieved <strong>~50% POC-to-deal conversion rate</strong> through consultative discovery, tailored architecture, and executive-level stakeholder engagement.</p></div>
+        <div class="exp-item"><div class="exp-dot"></div><p>Architected <strong>Salesforce CTI integrations</strong> (50+ deployments) enabling click-to-call, screen-pop, automated logging, and workflow automation for enterprise sales teams.</p></div>
+        <div class="exp-item"><div class="exp-dot"></div><p>Prepared <strong>50+ RFP/RFI responses and technical proposals</strong>, solution architecture documents, and executive briefings for multi-million dollar enterprise opportunities.</p></div>
+        <div class="exp-item"><div class="exp-dot"></div><p>Collaborated with engineering on <strong>VoIP, SIP, WebRTC, and IP-PBX</strong> deployment architecture for client-specific telephony environments.</p></div>
+        <div class="exp-item"><div class="exp-dot"></div><p>Bridged <strong>sales, engineering, and enterprise clients</strong> to ensure solutions were technically sound, operationally scalable, and commercially viable — achieving 90%+ client satisfaction.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Highlighted Work</div>
+    <div class="section-title">Selected Projects &amp; Case Studies</div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-tag">Case Study</div>
+        <div class="project-title">BFSI Contact Center Modernization</div>
+        <div class="project-industry">
+          <span class="industry-tag">Banking &amp; Finance</span><span class="industry-tag">CCaaS</span>
+        </div>
+        <p class="project-desc">Led presales for enterprise BFSI client modernization, designing omnichannel CCaaS architecture covering intelligent routing, IVR self-service, predictive dialer campaigns, and real-time supervisor dashboards.</p>
+        <div class="project-impact">
+          <div class="impact-label">Outcome</div>
+          <p>Closed 3 BFSI accounts from demo to POC to production. Reduced average handle time 25% and improved first-contact resolution 40% through automated workflows.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">Case Study</div>
+        <div class="project-title">Salesforce CTI &amp; Dialer Integration</div>
+        <div class="project-industry">
+          <span class="industry-tag">CRM Integration</span><span class="industry-tag">E-commerce</span>
+        </div>
+        <p class="project-desc">Architected and led presales for Salesforce CTI integration with DialShree, enabling click-to-call, screen-pop on inbound, automated call logging, and disposition-based workflow triggers across e-commerce and retail.</p>
+        <div class="project-impact">
+          <div class="impact-label">Outcome</div>
+          <p>Deployed across 50+ sales teams. Eliminated manual call logging, reduced post-call wrap-up time by 35%, and gave supervisors full interaction visibility inside Salesforce.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">Case Study</div>
+        <div class="project-title">Healthcare IVR &amp; Appointment Automation</div>
+        <div class="project-industry">
+          <span class="industry-tag">Healthcare</span><span class="industry-tag">IVR / SIP</span>
+        </div>
+        <p class="project-desc">Architected custom IVR and outbound reminder solution for healthcare providers, automating appointment confirmations, prescription reminders, and patient feedback collection via voice and SMS.</p>
+        <div class="project-impact">
+          <div class="impact-label">Outcome</div>
+          <p>Reduced missed appointments 45% and inbound call volume 30%, freeing clinical staff to focus on complex patient care and improving overall patient satisfaction.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About Me</div>
+    <div class="section-title">Turning Technical Complexity into Closed Deals</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I help enterprise companies evaluate, architect, and deploy scalable contact center and communication solutions. With 2+ years as a Presales Engineer at Elision Technologies, I've delivered <span>1,000+ enterprise demos</span>, converted <span>100+ POCs to production</span>, and maintained a <span>~50% POC-to-deal conversion rate</span> across BFSI, Healthcare, E-commerce, and other sectors.</p>
+        <p>My work spans the full presales lifecycle — from <span>consultative discovery and solution design</span> to proof-of-concept delivery, RFP responses, and post-sale technical enablement. I specialize in <span>omnichannel CCaaS platforms, predictive dialers, IVR systems, and CRM integrations</span> (especially Salesforce CTI).</p>
+        <p>I act as the connector between sales, engineering, and client teams — ensuring every solution is <span>technically sound, operationally scalable, commercially viable, and customer-focused</span>.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-row">
+          <div class="info-label">Full Name</div>
+          <div class="info-value">Utsav Kikani</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Email</div>
+          <div class="info-value"><a href="mailto:utsavsayshello@gmail.com">utsavsayshello@gmail.com</a></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Phone</div>
+          <div class="info-value"><a href="tel:+918735912707">+91 8735 912 707</a></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Location</div>
+          <div class="info-value">Ahmedabad, Gujarat, India</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Education</div>
+          <div class="info-value">B.Sc. Mathematics<br><span style="color:var(--muted);font-size:0.88rem;">St. Xavier's College, Ahmedabad</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Languages</div>
+          <div class="lang-chips">
+            <span class="lang-chip">English</span>
+            <span class="lang-chip">Hindi</span>
+            <span class="lang-chip">Gujarati</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+  <div class="cta-inner">
+    <div class="section-label">Let's Connect</div>
+    <div class="section-title">Building Enterprise Contact Center Excellence</div>
+    <p>Open to presales leadership roles, enterprise consulting, solution architecture, and contact center transformation projects.</p>
+    <div class="cta-btns">
+      <a href="resume.html" class="btn-primary">View Full Resume</a>
+      <a href="mailto:utsavsayshello@gmail.com" class="btn-secondary">Email Me</a>
+      <a href="https://www.linkedin.com/in/utsav-kikani-709142273/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Connect on LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Utsav Kikani · Presales Engineer · Ahmedabad, India</p>
+</footer>
+
+<script>
+  const nav = document.querySelector('nav');
+  const toggle = document.querySelector('.nav-toggle');
+  if (nav && toggle) {
+    toggle.addEventListener('click', () => {
+      const opened = nav.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', String(opened));
+    });
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealGroups = [
+    '.metric-item', '.exp-card', '.exp-item', '.section-label', '.section-title',
+    '.project-card', '.about-text p', '.info-card', '.cta-inner > *'
+  ];
+  const revealItems = document.querySelectorAll(revealGroups.join(','));
+
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    document.body.classList.add('motion-ready');
+    revealItems.forEach((item, index) => {
+      item.classList.add('reveal');
+      item.style.setProperty('--reveal-delay', `${(index % 4) * 70}ms`);
+    });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        window.setTimeout(() => entry.target.classList.add('done'), 750);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px' });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+
+    const countItems = document.querySelectorAll('.metric-num');
+    const countObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const element = entry.target;
+        const original = element.textContent.trim();
+        const target = Number(original.replace(/[^0-9.]/g, ''));
+        const prefix = original.startsWith('~') ? '~' : '';
+        const suffix = original.endsWith('+') ? '+' : original.endsWith('%') ? '%' : '';
+        const startedAt = performance.now();
+        const duration = 1100;
+
+        const updateCount = now => {
+          const progress = Math.min((now - startedAt) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          element.textContent = `${prefix}${Math.round(target * eased)}${suffix}`;
+          if (progress < 1) requestAnimationFrame(updateCount);
+        };
+
+        requestAnimationFrame(updateCount);
+        observer.unobserve(element);
+      });
+    }, { threshold: 0.7 });
+
+    countItems.forEach(item => countObserver.observe(item));
+  }
+</script>
+
 </body>
 </html>
